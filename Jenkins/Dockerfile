@@ -8,12 +8,6 @@ USER jenkins
 ARG JAVA_OPTS
 ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false ${JAVA_OPTS:-}"
 
-ARG master_image_version="local build"
-ENV master_image_version $master_image_version
-
-ARG GRADLE_USER_HOME
-ENV GRADLE_USER_HOME "${WORKSPACE}"
-
 # Install plugins
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
