@@ -1,0 +1,23 @@
+version: "3"
+services:
+  artifactory:
+    build: Artifactory/
+    hostname: artifactory
+    ports:
+      - 8081:8080
+    volumes:
+      - /etc/localtime:/etc/localtime
+
+  jenkins:
+    build:
+      context: Jenkins/
+      args:
+        - JAVA_OPTS
+        - master_image_version
+        - GRADLE_USER_HOME
+    hostname: jenkins
+    ports:
+      - 8082:8080
+    volumes:
+      - /etc/localtime:/etc/localtime
+      - $HOME/.ssh:/var/jenkins_home/.ssh
