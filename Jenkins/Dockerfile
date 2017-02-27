@@ -18,6 +18,5 @@ ENV GRADLE_USER_HOME "${WORKSPACE}"
 COPY plugins.txt /usr/share/jenkins/plugins.txt
 RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
-# Copy configuration scripts that will be executed by groovy
-COPY *.properties $JENKINS_HOME/
+# Copy preconfigured VBA job
 COPY Jobs/VBA_demo.xml usr/share/jenkins/ref/jobs/VBA_demo_1/config.xml
