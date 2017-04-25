@@ -1,21 +1,44 @@
 version: "3"
-services:
-  artifactory:
-    build: Artifactory/
-    hostname: artifactory
-    ports:
-      - 8081:8080
-    volumes:
-      - /etc/localtime:/etc/localtime
 
-  jenkins:
-    build:
-      context: Jenkins/
-      args:
-        - JAVA_OPTS
-    hostname: jenkins
-    ports:
-      - 8082:8080
-    volumes:
-      - /etc/localtime:/etc/localtime
-      - $HOME/.ssh:/var/jenkins_home/.ssh
+services:
+    artifactory:
+        build: Artifactory/
+        container_name: artifactory
+        ports:
+            - 8081:8080
+        volumes:
+            - /etc/localtime:/etc/localtime
+
+    jenkins:
+        build:
+            context: Jenkins/
+            args:
+                - JAVA_OPTS
+        container_name: jenkins
+        ports:
+            - 8082:8080
+        volumes:
+            - /etc/localtime:/etc/localtime
+            - $HOME/.ssh:/var/jenkins_home/.ssh
+
+    prometheus:
+        build: Prometheus/
+        container_name: prometheus
+        ports:
+            - 9090:9090
+    cadvisor:
+        image: google/cadvisor
+        volumes:
+          - /var/run:/var/run:rw
+          - /sys:/sys:ro
+          - /var/lib/docker/:/var/lib/docker:ro
+        expose:
+            - 8080
+        container_name: cadvisor
+
+    grafana:
+        build:
+            context: Grafana/
+        container_name: grafana
+        ports:
+            - 3000:3000
