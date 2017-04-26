@@ -1,0 +1,14 @@
+node {
+   def sample = [1,2,3,4,5]
+    def num = iterate(sample)
+    println(num)
+}
+
+def iterate(int[] num) {
+    def sum = 0
+    for (int i=num.size();i >= 0; i --) {
+       println(num[i])
+       sum+=it
+   }
+   return sum
+}

@@ -2,8 +2,7 @@ FROM jenkins:2.32.2-alpine
 
 USER root
 RUN apk update && apk add libstdc++ && rm -rf /var/cache/apk/*
-
-USER jenkins
+RUN apk update && apk add curl python && curl -o docker-1.12.1.tgz https://get.docker.com/builds/Linux/x86_64/docker-1.12.1.tgz && tar zxvf docker-1.12.1.tgz && mv docker/* /usr/bin/ && rm -rf docker-*
 
 ARG JAVA_OPTS
 ENV JAVA_OPTS "-Djenkins.install.runSetupWizard=false ${JAVA_OPTS:-}"

@@ -1,12 +1,12 @@
 {
   "__inputs": [
     {
-      "name": "Prometheus",
-      "label": "Prometheus",
+      "name": "DS_PROMETHEUS",
+      "label": "prometheus",
       "description": "",
       "type": "datasource",
       "pluginId": "prometheus",
-      "pluginName": "prometheus"
+      "pluginName": "Prometheus"
     }
   ],
   "__requires": [
@@ -67,7 +67,7 @@
   "rows": [
     {
       "collapse": false,
-      "height": 178,
+      "height": 175,
       "panels": [
         {
           "cacheTimeout": null,
@@ -78,7 +78,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "datasource": "${DS_PROM}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": 1,
           "editable": true,
           "error": false,
@@ -157,7 +157,7 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(245, 54, 54, 0.9)"
           ],
-          "datasource": "${DS_PROM}",
+          "datasource": "${DS_PROMETHEUS}",
           "editable": true,
           "error": false,
           "format": "decmbytes",
@@ -196,7 +196,7 @@
               "to": "null"
             }
           ],
-          "span": 3,
+          "span": 4,
           "sparkline": {
             "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
@@ -220,17 +220,11 @@
           "valueName": "current"
         },
         {
-          "aliasColors": {
-            "prometheus": "#F9BA8F",
-            "{instance=\"localhost:9090\",interval=\"5s\",job=\"prometheus\"}": "#F9BA8F"
-          },
+          "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_PROM}",
-          "editable": true,
-          "error": false,
+          "datasource": "${DS_PROMETHEUS}",
           "fill": 1,
-          "grid": {},
-          "id": 2,
+          "id": 17,
           "legend": {
             "avg": false,
             "current": false,
@@ -241,35 +235,35 @@
             "values": false
           },
           "lines": true,
-          "linewidth": 2,
+          "linewidth": 1,
           "links": [],
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 3,
+          "span": 5,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "jenkins_job_count_value",
-              "intervalFactor": 2,
+              "expr": "system_cpu_load",
+              "intervalFactor": 4,
               "legendFormat": "{{job}}",
-              "metric": "jenkins_job_count_value",
+              "metric": "system_cpu_load",
               "refId": "A",
-              "step": 2
+              "step": 4
             }
           ],
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Total jobs",
+          "title": "CPU usage",
           "tooltip": {
             "shared": true,
             "sort": 0,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
           "xaxis": {
@@ -281,6 +275,7 @@
           "yaxes": [
             {
               "format": "short",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": null,
@@ -288,6 +283,7 @@
             },
             {
               "format": "short",
+              "label": null,
               "logBase": 1,
               "max": null,
               "min": null,
@@ -313,7 +309,7 @@
             "{instance=\"localhost:9090\",job=\"prometheus\"}": "#C15C17"
           },
           "bars": false,
-          "datasource": "${DS_PROM}",
+          "datasource": "${DS_PROMETHEUS}",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -390,7 +386,7 @@
             "{instance=\"localhost:9090\",job=\"prometheus\"}": "#C15C17"
           },
           "bars": false,
-          "datasource": "${DS_PROM}",
+          "datasource": "${DS_PROMETHEUS}",
           "editable": true,
           "error": false,
           "fill": 1,
@@ -460,19 +456,84 @@
               "show": true
             }
           ]
+        },
+        {
+          "aliasColors": {
+            "prometheus": "#F9BA8F",
+            "{instance=\"localhost:9090\",interval=\"5s\",job=\"prometheus\"}": "#F9BA8F"
+          },
+          "bars": false,
+          "datasource": "${DS_PROMETHEUS}",
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {},
+          "id": 2,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 4,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "expr": "jenkins_job_count_value",
+              "intervalFactor": 2,
+              "legendFormat": "{{job}}",
+              "metric": "jenkins_job_count_value",
+              "refId": "A",
+              "step": 2
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Total jobs",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
         }
       ],
-      "repeat": null,
-      "repeatIteration": null,
-      "repeatRowId": null,
-      "showTitle": false,
-      "title": "New row",
-      "titleSize": "h6"
-    },
-    {
-      "collapse": false,
-      "height": "250px",
-      "panels": [],
       "repeat": null,
       "repeatIteration": null,
       "repeatRowId": null,
@@ -487,7 +548,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "${DS_PROM}",
+          "datasource": "${DS_PROMETHEUS}",
           "decimals": null,
           "editable": true,
           "error": false,
@@ -514,15 +575,15 @@
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 9,
+          "span": 12,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "prometheus_evaluator_duration_seconds{quantile!=\"0.01\", quantile!=\"0.05\"}",
+              "expr": "default_jenkins_builds_duration_milliseconds_summary_count",
               "interval": "",
               "intervalFactor": 2,
-              "legendFormat": "{{quantile}}",
+              "legendFormat": "{{exported_job}}",
               "refId": "A",
               "step": 2
             }
@@ -530,7 +591,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "Rule Eval Duration",
+          "title": "Avg Build Duration",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -545,7 +606,7 @@
           },
           "yaxes": [
             {
-              "format": "percentunit",
+              "format": "m",
               "label": "",
               "logBase": 1,
               "max": null,
@@ -567,6 +628,28 @@
       "repeatRowId": null,
       "showTitle": false,
       "title": "New row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": "250px",
+      "panels": [],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
       "titleSize": "h6"
     }
   ],
@@ -610,5 +693,5 @@
   },
   "timezone": "browser",
   "title": "Jenkins",
-  "version": 8
+  "version": 3
 }

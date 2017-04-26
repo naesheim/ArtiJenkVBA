@@ -11,4 +11,4 @@ curl -u admin:admin \
 'http://localhost:3000/api/datasources' \
 -X POST \
 -H 'Content-Type: application/json;charset=UTF-8' \
---data-binary '{"name":"Prometheus","type":"prometheus","url":"http://prometheus:9090","access":"proxy","basicauth":false}'
+--data-binary '{"name":"prometheus","type":"prometheus","url":"http://prometheus:9090","access":"proxy","basicauth":false}'

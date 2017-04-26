@@ -18,8 +18,12 @@ services:
         ports:
             - 8082:8080
         volumes:
+            - ~/jenkins-backup/jobs:/var/jenkins_home/jobs
+            - ~/jenkins-backup/userContent:/var/jenkins_home/userContent
             - /etc/localtime:/etc/localtime
             - $HOME/.ssh:/var/jenkins_home/.ssh
+            - /var/lib/docker:/var/lib/docker
+            - /var/run/docker.sock:/var/run/docker.sock
 
     prometheus:
         build: Prometheus/
