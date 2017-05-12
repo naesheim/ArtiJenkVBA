@@ -18,8 +18,9 @@ services:
         ports:
             - 8082:8080
         volumes:
-            - ~/jenkins-backup/jobs:/var/jenkins_home/jobs
-            - ~/jenkins-backup/userContent:/var/jenkins_home/userContent
+            - /Volumes/sfs/jenkins-backup/jobs:/var/jenkins_home/jobs
+            - /Volumes/sfs/jenkins-backup/userConten:/var/jenkins_home/userContent
+            - ~/.gradle/gradle.propertiesArtiJenkVBA:/root/.gradle/gradle.properties
             - /etc/localtime:/etc/localtime
             - $HOME/.ssh:/var/jenkins_home/.ssh
             - /var/lib/docker:/var/lib/docker
@@ -43,6 +44,16 @@ services:
     grafana:
         build:
             context: Grafana/
+        volumes:
+            - /Volumes/sfs/grafana-data/:/var/lib/grafana
         container_name: grafana
         ports:
             - 3000:3000
+
+    nginx:
+        image: nginx
+        volumes:
+            - /$PWD/Nginx/html:/usr/share/nginx/html
+        ports:
+            - 80:80
+        container_name: nginx
