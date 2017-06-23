@@ -1,85 +1,82 @@
-ace-editor:1.1
-active-directory:2.4
-ant:1.4
-antisamy-markup-formatter:1.5
-artifactory:2.8.2
-authentication-tokens:1.3
-bouncycastle-api:2.16.0
-branch-api:2.0.2
-build-timeout:1.18
-cloudbees-folder:5.17
-config-file-provider:2.15.1
-credentials:2.1.13
-credentials-binding:1.10
-display-url-api:1.1.1
-docker-commons:1.5
-docker-workflow:1.9.1
-durable-task:1.13
-external-monitor-job:1.6
-favorite:2.0.4
-git:3.0.4
-git-client:2.4.5
-git-server:1.7
-github:1.25.1
-github-api:1.84
-github-branch-source:2.0.1
-google-login:1.3
-gradle:1.25
-handlebars:1.1.1
-icon-shim:2.0.3
-ivy:1.26
-job-dsl:1.61
-jackson2-api:2.7.3
-javadoc:1.4
-job-dsl:1.54
-jquery:1.11.2-0
-jquery-detached:1.2.1
-junit:1.19
-ldap:1.13
-mailer:1.20
-matrix-auth:1.4
-matrix-project:1.7.1
-maven-plugin:2.14
-metrics:3.1.2.9
-momentjs:1.1.1
-monitoring:1.62.0
-nodelabelparameter:1.7.2
-pam-auth:1.3
-plain-credentials:1.3
-pretested-integration:2.4.1 (409ae)
-scm-api:2.0.2
-script-security:1.25
-sse-gateway:1.10
-ssh-agent:1.15
-ssh-credentials:1.13
-ssh-slaves:1.16
-structs:1.6
-swarm:2.2
-timestamper:1.8.7
-token-macro:2.0
-variant:1.1
-windows-slaves:1.2
-workflow-aggregator:2.5
-workflow-api:2.11
-workflow-basic-steps:2.3
-workflow-cps:2.28
-workflow-cps-global-lib:2.5
-workflow-durable-task-step:2.10
-workflow-job:2.9
-workflow-multibranch:2.12
-workflow-scm-step:2.3
-workflow-step-api:2.7
-workflow-support:2.13
-pipeline-build-step:2.4
-pipeline-github-lib:1.0
-pipeline-graph-analysis:1.3
-pipeline-input-step:2.5
-pipeline-milestone-step:1.3
-pipeline-model-api:1.0.2
-pipeline-model-declarative-agent:1.0.2
-pipeline-model-definition:1.0.2
-pipeline-rest-api:2.5
-pipeline-stage-step:2.2
-pipeline-stage-tags-metadata:1.0.2
-pipeline-stage-view:2.5
-prometheus:1.0.6
+jquery-detached: 1.2.1
+junit: 1.20
+github-api: 1.85.1
+antisamy-markup-formatter: 1.5
+pipeline-milestone-step: 1.3.1
+branch-api: 2.0.10
+display-url-api: 2.0
+authentication-tokens: 1.3
+ivy: 1.27.1
+timestamper: 1.8.8
+docker-workflow: 1.12
+pam-auth: 1.3
+ldap: 1.15
+workflow-basic-steps: 2.5
+pipeline-input-step: 2.7
+metrics: 3.1.2.10
+workflow-durable-task-step: 2.12
+matrix-project: 1.11
+ssh-credentials: 1.13
+jquery: 1.11.2-0
+maven-plugin: 2.16
+sse-gateway: 1.15
+pipeline-model-api: 1.1.7
+monitoring: 1.67.0
+workflow-support: 2.14
+pretested-integration: 2.4.1 (409ae)
+variant: 1.1
+credentials: 2.1.14
+bouncycastle-api: 2.16.1
+swarm: 3.4
+workflow-api: 2.17
+matrix-auth: 1.6
+handlebars: 1.1.1
+git-client: 2.4.6
+durable-task: 1.14
+pipeline-stage-view: 2.8
+workflow-multibranch: 2.16
+pipeline-stage-tags-metadata: 1.1.7
+pipeline-graph-analysis: 1.4
+config-file-provider: 2.16.0
+icon-shim: 2.0.3
+job-dsl: 1.63
+docker-commons: 1.7
+momentjs: 1.1.1
+pipeline-stage-step: 2.2
+build-timeout: 1.18
+pubsub-light: 1.8
+structs: 1.8
+workflow-scm-step: 2.5
+pipeline-github-lib: 1.0
+script-security: 1.29
+workflow-cps: 2.36
+google-login: 1.3
+external-monitor-job: 1.7
+ace-editor: 1.1
+javadoc: 1.4
+github-branch-source: 2.0.6
+git-server: 1.7
+prometheus: 1.0.6
+pipeline-build-step: 2.5
+jackson2-api: 2.7.3
+ssh-agent: 1.15
+mailer: 1.20
+github: 1.27.0
+cloudbees-folder: 6.0.4
+pipeline-rest-api: 2.8
+workflow-job: 2.11.1
+token-macro: 2.1
+plain-credentials: 1.4
+pipeline-model-extensions:1.1.1
+nodelabelparameter: 1.7.2
+scm-api: 2.1.1
+credentials-binding: 1.12
+windows-slaves: 1.3.1
+git: 3.3.0
+ant: 1.5
+active-directory: 2.6
+gradle: 1.26
+workflow-cps-global-lib: 2.8
+ssh-slaves: 1.20
+workflow-step-api: 2.11
+favorite: 2.3.0

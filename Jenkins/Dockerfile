@@ -1,4 +1,4 @@
-FROM jenkins:2.32.2-alpine
+FROM jenkins:2.46.3-alpine
 
 USER root
 RUN apk update && apk add libstdc++ && rm -rf /var/cache/apk/*
